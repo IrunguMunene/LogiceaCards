@@ -173,6 +173,10 @@ namespace LogiceaCardsApplication.Controllers
             {
                 existingCard.Name = updatedCardDTO.Name;
             }
+            else
+            {
+                return BadRequest("Card name is mandatory.");
+            }
 
             if (!string.IsNullOrWhiteSpace(updatedCardDTO.Description))
             {
