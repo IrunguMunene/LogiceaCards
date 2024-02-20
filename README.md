@@ -40,9 +40,11 @@ The application runs against an SQL Server database.
 
 I have used entity framework core code first to create the Entity classes and relationships.
 
-The database is created and seeded with test data on the first run.
+The database is created and seeded with test data on the first run. 
 
 One issue I noticed is that at times on running the application the Swagger UI does not show, this might be an issue with my machine I have some windows updates that need to run.
 However, if this occurs, stop the debugger and clean, rebuild the application and run agian.
+
+Remember to edit the connection string as necessary in the appsettings.json
 
 You can reach out to me on francis.irungu.munene@gmail.com or on skype id francis.irungu.munene.
