@@ -51,17 +51,17 @@ namespace LogiceaCardDomain
             {
                 var users = new List<User>
                 {
-                    new User { Email = "user1@example.com", Password = "hashed_password1", RoleId = 1 },
-                    new User { Email = "user2@example.com", Password = "hashed_password2", RoleId = 2 },
-                    new User { Email = "user3@example.com", Password = "hashed_password3", RoleId = 2 },
-                    new User { Email = "user4@example.com", Password = "hashed_password4", RoleId = 2 },
-                    new User { Email = "user5@example.com", Password = "hashed_password5", RoleId = 2 },
-                    new User { Email = "user6@example.com", Password = "hashed_password6", RoleId = 2 },
-                    new User { Email = "user7@example.com", Password = "hashed_password7", RoleId = 2 },
-                    new User { Email = "user8@example.com", Password = "hashed_password8", RoleId = 2 },
-                    new User { Email = "user9@example.com", Password = "hashed_password9", RoleId = 2 },
-                    new User { Email = "user10@example.com", Password = "hashed_password10", RoleId = 2 },
-                    new User { Email = "user11@example.com", Password = "hashed_password11", RoleId = 2 }
+                    new User { Email = "user1@example.com", Password = "hashed_password1", RoleId = 2 },
+                    new User { Email = "user2@example.com", Password = "hashed_password2", RoleId = 1 },
+                    new User { Email = "user3@example.com", Password = "hashed_password3", RoleId = 1 },
+                    new User { Email = "user4@example.com", Password = "hashed_password4", RoleId = 1 },
+                    new User { Email = "user5@example.com", Password = "hashed_password5", RoleId = 1 },
+                    new User { Email = "user6@example.com", Password = "hashed_password6", RoleId = 1 },
+                    new User { Email = "user7@example.com", Password = "hashed_password7", RoleId = 1 },
+                    new User { Email = "user8@example.com", Password = "hashed_password8", RoleId = 1 },
+                    new User { Email = "user9@example.com", Password = "hashed_password9", RoleId = 1 },
+                    new User { Email = "user10@example.com", Password = "hashed_password10", RoleId = 1 },
+                    new User { Email = "user11@example.com", Password = "hashed_password11", RoleId = 1 }
                 };
 
                 context.Users.AddRange(users);
