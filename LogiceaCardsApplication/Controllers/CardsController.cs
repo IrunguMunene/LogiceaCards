@@ -78,32 +78,33 @@ namespace LogiceaCardsApplication.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCards()
         {
-            UserDTO? userDto = await IsAuthorized();
-
-            if (userDto == null)
-            {
-                return Forbid();
-            }
-
-            var cards = await _dbContext.Cards
-                                .Include(c => c.Status)
-                                .Include(c => c.User)
-                                .ToListAsync();
-
-            List<CardDTO> cardDTOs = new List<CardDTO>();
-            foreach (var card in cards)
-            {
-                cardDTOs.Add(new CardDTO(card.Id)
-                {
-                    Color = card.Color,
-                    CreatedAt = card.CreatedAt,
-                    Description = card.Description,
-                    Name = card.Name,
-                    Status = card.Status.Name
-                });
-            }
-
-            return Ok(cardDTOs);
+             UserDTO? userDto = await IsAuthorized();
+ 
+             if (userDto == null)
+             {
+                 return Forbid();
+             }
+ 
+             List<Card> cards = await _dbContext.Cards
+                     .Include(c => c.Status)
+                     .Include(c => c.User)
+                     .Where(c => (userDto.Role == "Admin" || c.UserId == userDto.Id))
+                     .ToListAsync();
+ 
+             List<CardDTO> cardDTOs = new List<CardDTO>();
+             foreach (var card in cards)
+             {
+                 cardDTOs.Add(new CardDTO(card.Id)
+                 {
+                     Color = card.Color,
+                     CreatedAt = card.CreatedAt,
+                     Description = card.Description,
+                     Name = card.Name,
+                     Status = card.Status.Name
+                 });
+             }
+             
+             return Ok(cardDTOs);
         }
 
         [HttpGet("{id}")]
