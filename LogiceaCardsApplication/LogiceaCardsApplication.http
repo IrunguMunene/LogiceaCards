@@ -1,0 +1,6 @@
+@LogiceaCardsApplication_HostAddress = http://localhost:5130
+
+GET {{LogiceaCardsApplication_HostAddress}}/Cards/
+Accept: application/json
+
+###
